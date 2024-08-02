@@ -1,0 +1,20 @@
+---
+import TopNavbar from '../components/TopNavbar.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Office</title>
+  <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body class="bg-gray-100">
+  <TopNavbar />
+  <Navbar />
+  <main class="pt-16">
+    <slot />
+  </main>
+</body>
+</html>
