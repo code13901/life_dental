@@ -37,17 +37,17 @@ const navItems = [
 ];
 ---
 
-<nav class="bg-white shadow-md fixed w-full z-10">
+<nav class="bg-transparent fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-20">
       <div class="flex items-center">
         <a href="/" class="flex-shrink-0">
-          <img class="h-10 w-auto" src="/assets/logo.png" alt="209 NYC Dental">
+          <img class="h-20 w-auto" src="/src/assets/images/logo.png" alt="Life.Dental">
         </a>
-        <div class="hidden md:flex md:space-x-4 ml-10">
+        <div class="hidden md:flex md:items-center md:space-x-8 ml-10">
           {navItems.map((item) => (
             <div class="relative group">
-              <a href={item.href} class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+              <a href={item.href} class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-lg font-semibold">
                 {item.name}
               </a>
               {item.dropdown && (
@@ -86,7 +86,7 @@ const navItems = [
         </div>
       </div>
       <div class="hidden md:flex items-center space-x-4">
-        <a href="/contact" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Contact Us</a>
+        <a href="/contact" class="bg-blue-600 text-white px-4 py-2 rounded-md text-lg font-semibold hover:bg-blue-700">Contact Us</a>
       </div>
       <div class="-mr-2 flex md:hidden">
         <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-blue-600 focus:outline-none focus:text-blue-600" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMenu()">
@@ -102,12 +102,11 @@ const navItems = [
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
   <div class="md:hidden hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       {navItems.map((item) => (
         <div>
-          <a href={item.href} class="text-gray-700 hover:bg-blue-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+          <a href={item.href} class="text-gray-700 hover:bg-blue-600 hover:text-white block px-3 py-2 rounded-md text-base font-semibold">
             {item.name}
           </a>
           {item.dropdown && (
@@ -142,11 +141,6 @@ const navItems = [
       <a href="/contact" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Contact Us</a>
     </div>
   </div>
-</nav>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-  }
-</script>
+  <script is:raw src="/src/theme.js"></script>
+</nav>
